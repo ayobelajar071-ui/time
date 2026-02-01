@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>times projek</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="nav ">
+    <a href="/stopwatch/stopwatch.HTML"><button>stopwatch</button></a>
+  </nav>
+  <main class="main">
+
+    <div class="div">
+      <input type="number" placeholder="masukkan waktu" id="nomor" min="1" class="input">
+
+      <div class="button">
+        <button id="btn">masukkan</button>
+        <button id="btn1">reset</button>
+        <button id="btn2">pause</button>
+      </div>
+
+      <div class="container-suara">
+        <label for="suara" class="tombol-suara">Pilih Suara Alarm</label>
+        <input type="file" id="suara" accept=".mp3" style="display: none;">
+        <p id="text">00:00</p>
+      </div>
+
+    </div>
+
+
+
+  </main>
+
+
+</body>
+
+<script src="main.js"></script>
+
+</html>
