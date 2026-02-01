@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stopwatch.css">
+    <link rel="stylesheet" href="/alarm/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="/alarm/home.html">
+            <img src="/aset/alarm.png" class="foto-alarm"></img>
+        </a>
+    </nav>
+
+    <div>
+        <button id="mulai">Mulai</button>
+        <button type="reset" id="Reset">Reset</button>
+        <button id="Stop">Pause</button>
+        <p id="taxt">00:00:00</p>
+    </div>
+
+</body>
+<script>
+
+    // let and const
+
+    let waktu;
+    let m = 0, d = 0, md = 0
+
+    // function
+    function gas() {
+        waktu = setInterval(run, 10)
+        document.getElementById("mulai").disabled = true;
+    }
+
+    function run() {
+        md++
+        if (md == 100) { md = 0, d++; }
+        if (d == 60) { d = 0, m++; }
+        document.getElementById("taxt").textContent =
+            (m < 10 ? "0" + m : m) + ":" +
+            (d < 10 ? "0" + d : d) + ":" +
+            (md < 10 ? "0" + md : md);
+    }
+
+    function reset() {
+        clearInterval(waktu)
+        document.getElementById("taxt").textContent = "00:00:00"
+        document.getElementById("mulai").disabled = false;
+        waktu = null;
+        m = 0;
+        d = 0;
+        md = 0;
+    }
+
+    function pause() {
+        if (waktu) {
+            clearInterval(waktu);
+            waktu = null;
+            document.getElementById("Stop").innerHTML = "resume"
+        }
+        else {
+
+            gas();
+            document.getElementById("Stop").innerHTML = "Pause"
+        }
+    }
+    // addEventlistener
+
+    mulai.addEventListener('click', gas)
+    Reset.addEventListener('click', reset)
+    Stop.addEventListener('click', pause)
+</script>
+
+</html>
