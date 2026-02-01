@@ -89,12 +89,24 @@ button:hover {
 nav{
     
     position: absolute; 
-    top:0;
+    top: 0;
     left: 0;        
-    display:flex;
+    display: flex;
     justify-content: center;   
-    width: 100%;     
-    padding: 10px 0;
+    width: 100%; 
+    height: 100px; /* Anda bisa menyesuaikan ini */
+    padding: 0;    /* Ubah dari 10px menjadi 0 agar rapat ke atas */
     z-index: 10;   
-    background-color: navy; 
+    background-color: #60A5D1;
 }
+
+.foto-alarm{
+   position: absolute;
+    top: 0;            /* Menempel ke bagian paling atas nav */
+    left: 50%;         /* Menaruh di tengah secara horizontal */
+    transform: translateX(-50%); /* Memastikan posisi tengah yang sempurna */
+    height: 100px;     /* Sesuaikan tinggi gambar dengan tinggi nav agar pas */
+    width: auto;       /* Biarkan lebar menyesuaikan proporsi */
+    display: block;
+}
+
